@@ -1,8 +1,8 @@
 Analyze personal journal with simple alternating format of: <br>
 <ul>
 
-*Date/Time (vim strftime('%c')) <br>
-*Followed by Text<br>
+<li>Date/Time (vim strftime('%c'))</li> <br>
+<li>Followed by Text<br></li>
 </ul>
 Manage journal with vimscript and macros
 
