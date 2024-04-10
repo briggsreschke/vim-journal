@@ -34,23 +34,23 @@ with open("twelve.json", "w") as outf:
     json.dump(entries, outf, indent=3)
 
 
-stamp = {}
-stamps = []
+entry = {}
+entries = []
 
 with open("twelve.json", "r") as inf:
-    entries = json.load(inf)
+    journal = json.load(inf)
 
-for entry in entries:
+for entry in journal:
     dt = re.search(r"([A-Za-z]{3})\s([A-Za-z]{3})\s+(\d*)\s(\d\d:\d\d:\d\d)\s(\d*)", entry["date"])
-    stamp["day_name"] = dt.group(1)
-    stamp['month'] = dt.group(2)
-    stamp['day_num'] = dt.group(3)
-    stamp["time"] = dt.group(4)
-    stamp["year"] = dt.group(5)
-    stamp['text'] = entry['text']
+    entry["day_name"] = dt.group(1)
+    entry['month'] = dt.group(2)
+    entry['day_num'] = dt.group(3)
+    entry["time"] = dt.group(4)
+    entry["year"] = dt.group(5)
+    entry['text'] = entry['text']
     
-    stamps.append(stamp)
-    stamp = {}
+    entries.append(entry)
+    entry  = {}
 
 # ------------------------------------------------------------------------------------
 # Graph of num entries by day of week
@@ -59,7 +59,7 @@ for entry in entries:
 from collections import defaultdict
 from collections import OrderedDict
 
-tmp = [stamp["day_name"] for stamp in stamps]
+tmp = [entry["day_name"] for entry in entries]
 day_cnt = defaultdict(int)
 
 for day in tmp:
@@ -88,11 +88,12 @@ plt.savefig("graphs/days.png")
 # ------------------------------------------------------------------------------------
 # NLP count words by kind. Most used words: verbs and nouns
 # ------------------------------------------------------------------------------------
-import spacy
-
 txt = ""
-for entry in stamps:
+for entry in entries:
     txt += entry['text'].lower()
+
+
+import spacy
 
 exclude = ['foobar']
 
@@ -139,7 +140,6 @@ ax.set_title("Nouns")
 ax.set_xlabel('Word Frequency')
 #plt.show()
 plt.savefig("graphs/words-noun.png")
-
 # -------------------------------------------------------------------
 # VERBS
 # -------------------------------------------------------------------
@@ -166,23 +166,25 @@ ax.set_xlabel('Word Frequency')
 plt.savefig("graphs/words-verb.png")
 
 # ------------------------------------------------------------------------------------
-# Time of Day | # of entries
+# Time of Day / Over Time
 # ------------------------------------------------------------------------------------
 
 pattern = r"(\d+):(\d+):(\d+)"
 time_arr = []
 time_by_hour = defaultdict(int)
 
-for stamp in stamps:
-    timestamp = re.search(pattern, stamp["time"])
-    if timestamp:
-        hours = int(timestamp.group(1))
-        minutes = int(timestamp.group(2))
-        seconds = int(timestamp.group(3))
-        
-        time_by_hour[hours] += 1 
-time_by_hour = dict(time_by_hour)
+for entry in entries:
+    foo = re.search(pattern, entry["time"])
+    if foo:
+        hours = int(foo.group(1))
+        minutes = int(foo.group(2))
+        seconds = int(foo.group(3))
+        bar = hours+minutes/60 + seconds/3600
+        time_arr.append(bar)
 
+        time_by_hour[hours] += 1
+
+time_by_hour = dict(time_by_hour)
 od = OrderedDict(sorted(time_by_hour.items()))
 time_by_hour = dict(od)
 
@@ -200,7 +202,9 @@ ax.plot(x, y, linewidth=2.0)
 ax.set(xlim=(-1, 24), xticks=np.arange(0,24+1
                                       ),
        ylim=(0, lim), yticks=np.arange(0, lim+1))
+#ax.bar(x, y )
 
 #plt.show()
+
 plt.savefig("graphs/time-ebh.png")
 
