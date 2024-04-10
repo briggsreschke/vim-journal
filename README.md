@@ -5,7 +5,7 @@ Analyze personal journal with simple alternating format of: <br>
 </ul>
 Manage journal with vim(script)<br><br>
 
-Python script slurps up the journal, parses it out to json {datetime, text}  Matplotlib and SpaCy to make graphs and analyze text. Potential for deeper text analysis and as weeks turn into months into years, more data to work with. Since its just text, could be any journal with the format 
+Python slurps up the journal, parses it out to json {datetime, text}  Matplotlib and SpaCy to make graphs and analyze text. Potential for deeper text analysis and as weeks turn into months into years, more data to work with. Since its just text, could be any journal with the format 
 being used here or many journals on different topics.
 
 ![days](https://github.com/briggsreschke/vim-journal/assets/16325768/d069cb8e-e8e6-4cdb-9c2e-57bae14aef39)
