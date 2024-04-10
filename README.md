@@ -1,6 +1,6 @@
-Analyze personal journal with simple format of 
-*Date (vim strftime('%c)) 
-*Followed by Text
+Analyze personal journal with simple format of <br>
+*Date (vim strftime('%c)) <br>
+*Followed by Text<br>
 
 Script slurps up the journal, parses it out to json --> (date/time, text)
 Matplotlib and SpaCy to make graphs and analyze text. Potential for deeper text analysis and as weeks turn into months into years, more data to work with.
