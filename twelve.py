@@ -179,9 +179,8 @@ for stamp in stamps:
         hours = int(timestamp.group(1))
         minutes = int(timestamp.group(2))
         seconds = int(timestamp.group(3))
-
-        time_by_hour[hours] += 1
         
+        time_by_hour[hours] += 1 
 time_by_hour = dict(time_by_hour)
 
 od = OrderedDict(sorted(time_by_hour.items()))
