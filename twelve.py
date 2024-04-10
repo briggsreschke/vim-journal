@@ -88,13 +88,11 @@ plt.savefig("graphs/days.png")
 # ------------------------------------------------------------------------------------
 # NLP count words by kind. Most used words: verbs and nouns
 # ------------------------------------------------------------------------------------
+import spacy
 
 txt = ""
 for entry in stamps:
     txt += entry['text'].lower()
-
-
-import spacy
 
 exclude = ['foobar']
 
