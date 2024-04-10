@@ -88,6 +88,7 @@ plt.savefig("graphs/days.png")
 # ------------------------------------------------------------------------------------
 # NLP count words by kind. Most used words: verbs and nouns
 # ------------------------------------------------------------------------------------
+
 txt = ""
 for entry in stamps:
     txt += entry['text'].lower()
@@ -140,6 +141,7 @@ ax.set_title("Nouns")
 ax.set_xlabel('Word Frequency')
 #plt.show()
 plt.savefig("graphs/words-noun.png")
+
 # -------------------------------------------------------------------
 # VERBS
 # -------------------------------------------------------------------
@@ -202,9 +204,7 @@ ax.plot(x, y, linewidth=2.0)
 ax.set(xlim=(-1, 24), xticks=np.arange(0,24+1
                                       ),
        ylim=(0, lim), yticks=np.arange(0, lim+1))
-#ax.bar(x, y )
 
 #plt.show()
-
 plt.savefig("graphs/time-ebh.png")
 
