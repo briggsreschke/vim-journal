@@ -1,4 +1,4 @@
-Analyze personal journal with simple format of <br>
+Analyze personal journal with simple alternating format of <br>
 *Date/Time (vim strftime('%c')) <br>
 *Followed by Text<br>
 Manage journal with vimscript and macros
