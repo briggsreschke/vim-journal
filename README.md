@@ -1,5 +1,5 @@
 Analyze personal journal with simple format of <br>
-*Date (vim strftime('%c')) <br>
+*Date/Time (vim strftime('%c')) <br>
 *Followed by Text<br>
 
 Script slurps up the journal, parses it out to json --> (date/time, text)<br>
