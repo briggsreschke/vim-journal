@@ -1,6 +1,9 @@
-Analyze personal journal with simple alternating format of <br>
+Analyze personal journal with simple alternating format of: <br>
+<ul>
+
 *Date/Time (vim strftime('%c')) <br>
 *Followed by Text<br>
+</ul>
 Manage journal with vimscript and macros
 
 Script slurps up the journal, parses it out to json {datetime, text}  Matplotlib and SpaCy to make graphs and analyze text. Potential for deeper text analysis and as weeks turn into months into years, more data to work with. Since its just text, could be any journal with the format 
