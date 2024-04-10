@@ -174,13 +174,11 @@ time_arr = []
 time_by_hour = defaultdict(int)
 
 for stamp in stamps:
-    foo = re.search(pattern, stamp["time"])
-    if foo:
-        hours = int(foo.group(1))
-        minutes = int(foo.group(2))
-        seconds = int(foo.group(3))
-        bar = hours+minutes/60 + seconds/3600
-        time_arr.append(bar)
+    timestamp = re.search(pattern, stamp["time"])
+    if timestamp:
+        hours = int(timestamp.group(1))
+        minutes = int(timestamp.group(2))
+        seconds = int(timestamp.group(3))
 
         time_by_hour[hours] += 1
         
