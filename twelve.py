@@ -185,8 +185,9 @@ for stamp in stamps:
         time_arr.append(bar)
 
         time_by_hour[hours] += 1
-
+        
 time_by_hour = dict(time_by_hour)
+
 od = OrderedDict(sorted(time_by_hour.items()))
 time_by_hour = dict(od)
 
