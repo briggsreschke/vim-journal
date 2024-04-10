@@ -164,7 +164,7 @@ ax.set_xlabel('Word Frequency')
 plt.savefig("graphs/words-verb.png")
 
 # ------------------------------------------------------------------------------------
-# Time of Day / Over Time
+# Time of Day | # of entries
 # ------------------------------------------------------------------------------------
 
 pattern = r"(\d+):(\d+):(\d+)"
