@@ -168,7 +168,6 @@ plt.savefig("graphs/words-verb.png")
 # ------------------------------------------------------------------------------------
 
 pattern = r"(\d+):(\d+):(\d+)"
-time_arr = []
 time_by_hour = defaultdict(int)
 
 for entry in entries:
