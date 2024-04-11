@@ -1,6 +1,6 @@
 Analyze personal journal with simple alternating format of: <br>
 <ul>
-<li>Date/Time (vim strftime('%c'))</li> 
+<li>Date/Time (strftime('%c'))</li> 
 <li>Followed by Text<br></li>
 </ul>
 Manage journal with vim<br><br>
