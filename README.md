@@ -3,7 +3,7 @@ Analyze personal journal with simple alternating format of: <br>
 <li>Date/Time (vim strftime('%c'))</li> 
 <li>Followed by Text<br></li>
 </ul>
-Manage journal with vim(script)<br><br>
+Manage journal with vim<br><br>
 
 Python slurps up the journal, parses it out to json {datetime, text}  Matplotlib and SpaCy to make graphs and analyze text. Potential for deeper text analysis and as weeks turn into months into years, more data to work with. Since its just text, could be any journal with the format 
 being used here or many journals on different topics.
