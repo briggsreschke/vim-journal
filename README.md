@@ -14,6 +14,9 @@ being used here or many journals on different topics.
 
 ![words-noun](https://github.com/briggsreschke/vim-journal/assets/16325768/cb9d76e8-ff8e-4a26-8526-df181d4c3cd7)
 
+![words-verb](https://github.com/briggsreschke/vim-journal/assets/16325768/ca7fbe32-9c51-4525-802e-0daa7957baea)
+
+
 
 
 
