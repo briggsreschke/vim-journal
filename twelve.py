@@ -1,3 +1,6 @@
+# Parses journal entries into json
+# Uses regex to parse date/time stamp
+
 import re
 import json
 import pandas as pd
